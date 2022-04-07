@@ -111,8 +111,8 @@ fn main() {
         if cfg!(unix) {
             library.link_paths.iter().for_each(|path| {
                 println!("cargo:rustc-link-arg=-Wl,-rpath,{}", path.display());
-                println!("cargo:rustc-link-search={}", path.display());
             });
+            println!("cargo:rustc-link-search={}", rbconfig("libdir"));
         }
     } else {
         if cfg!(unix) {
