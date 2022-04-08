@@ -46,15 +46,12 @@ jobs:
           rust_toolchain: ${{ matrix.sys.rust_toolchain }}
           ruby_version: ${{ matrix.ruby_version }}
           os: ${{ matrix.sys.os }}
-      - uses: actions-rs/cargo@v1
-        name: 🛠 Cargo build
-        with:
-          command: build
-          args: --locked --release --verbose
-      - uses: actions-rs/cargo@v1
-        name: 🧪 Cargo test
-        with:
-          command: test
+      - name: 🛠 Cargo build
+        working-directory: crates/rb-sys
+        run: cargo build --locked --release --verbose
+      - name: 🧪 Cargo test
+        working-directory: crates/rb-sys
+        run: cargo test
       - name: 💨 Smoke test
         if: ${{ matrix.sys.os == 'ubuntu-latest' }}
         working-directory: examples/simple
