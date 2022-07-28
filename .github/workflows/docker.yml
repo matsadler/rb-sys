@@ -71,7 +71,7 @@ jobs:
           repo: "oxidize-rb/cross-gem-action"
           path: "tmp/cross-gem-action"
 
-      - uses: "oxidize-rb/cross-gem-action@v1"
+      - uses: "oxidize-rb/cross-gem-action@v5"
         with:
           platform: ${{ matrix.platform.ruby_target }}
           directory: tmp/cross-gem-action/__tests__/fixtures/test-gem
