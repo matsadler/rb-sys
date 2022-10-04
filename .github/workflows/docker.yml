@@ -21,7 +21,7 @@ jobs:
           # - ruby_target: x86-mingw32
           # - ruby_target: x86-linux
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
 
       - uses: ruby/setup-ruby@v1
         with:
@@ -66,7 +66,7 @@ jobs:
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
       # Test the container
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.1.0
         with:
           repo: "oxidize-rb/cross-gem-action"
           path: "tmp/cross-gem-action"
