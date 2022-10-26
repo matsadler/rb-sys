@@ -19,7 +19,7 @@ link-ruby = []
 ruby-macros = ["cc", "shell-words"]
 
 [dependencies]
-libc = "0.2.126"
+libc = "0.2.137"
 
 [lib]
 doctest = false
